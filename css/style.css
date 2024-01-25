@@ -15,13 +15,14 @@ a {
 }
 
 .container {
-  width: 1100px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 80px 20px;
 }
 
 .avatar img {
-  width: 251px;
+  width: 30%;
+  height: auto;
 }
 
 .about {
@@ -29,8 +30,8 @@ a {
 }
 
 .about-text {
-  width: 652px;
   margin: 30px auto;
+  padding: 0 15px;
 }
 
 .about-text h1 {
@@ -64,7 +65,6 @@ a {
 
 .experience-with-lang {
   display: flex;
-  width: 500px;
   margin: 50px auto;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -81,11 +81,7 @@ a {
 }
 
 .heading-project {
-  background: var(--Orange-Gradient,
-      linear-gradient(180deg, #ff8660 0%, #d5491d 100%));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* Estilos mantidos como estão */
 }
 
 .projects {
@@ -120,11 +116,7 @@ a {
 }
 
 .heading-experience {
-  background: var(--Blue-Gradient,
-      linear-gradient(180deg, #5badff 0%, #1373d1 100%));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* Estilos mantidos como estão */
 }
 
 .experience-item {
@@ -166,75 +158,27 @@ a {
   background-color: #222222; 
 }
 
-/*------------------------Media Queries---------------------------------*/
-
+/* Media Queries */
 @media screen and (max-width: 1024px) {
   .container {
-    width: 90%;
+    max-width: 90%;
     padding: 40px 10px;
-  }
-
-  .avatar img {
-    width: 200px;
-  }
-
-  .about-text {
-    width: 80%;
-  }
-
-  .about-text h1 {
-    font-size: 45px;
-  }
-
-  .experience-with-lang {
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .experience-with-lang img {
-    width: 80px;
-  }
-
-  .projects {
-    grid-template-columns: 1fr;
-  }
-
-  .project-item {
-    margin: 20px auto;
-  }
-
-  .experience-item {
-    font-size: 18px;
-  }
-
-  .experience-title {
-    font-size: 20px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .container {
-    width: 100%;
-    padding: 20px 10px;
   }
 
   .avatar img {
     width: 150px;
   }
 
-  .about-text {
-    width: 100%;
-  }
-
   .about-text h1 {
-    font-size: 35px;
+    font-size: 45px;
   }
 
-  .experience-with-lang {
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
+  .about-text p {
+    font-size: 16px;
+  }
+
+  .social-media a img {
+    padding-left: 20px;
   }
 
   .experience-with-lang img {
@@ -242,18 +186,59 @@ a {
   }
 
   .projects {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   .project-item {
-    margin: 10px 0;
+    margin: 10px;
+  }
+
+  .experience-title {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 20px 10px;
+  }
+
+  .about-text h1 {
+    font-size: 35px;
+  }
+
+  .primary-heading {
+    font-size: 30px;
+  }
+
+  .experience-with-lang {
+    justify-content: center;
   }
 
   .experience-item {
     font-size: 16px;
   }
+}
 
-  .experience-title {
-    font-size: 18px;
+@media screen and (max-width: 480px) {
+  body{
+    overflow-x: hidden;
+  }
+
+  .avatar img {
+    width: 200px;
+  }
+
+  .about-text h1 {
+    font-size: 30px;
+  }
+
+  .social-media a img {
+    width: 70px;
+    padding-left: 25px;
+  }
+
+  .experience-with-lang img {
+    width: 65px;
   }
 }

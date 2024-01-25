@@ -1,54 +1,53 @@
 /* Variáveis CSS para cores recorrentes */
 :root {
-    --white-color: #ffffff;
-    --pink-color: #e0287d;
-    --light-blue-color: #1bc7fb;
+  --white-color: #ffffff;
+  --pink-color: #e0287d;
+  --light-blue-color: #1bc7fb;
 }
 
 /* Estilos para a classe .hero */
 .hero {
-    font-size: clamp(40px, 10vw, 70px);
-    line-height: 1;
-    display: inline-block;
-    color: var(--white-color);
-    z-index: 2;
-    letter-spacing: 10px;
-    filter: drop-shadow(0 1px 3px);
+  font-size: clamp(40px, 10vw, 70px);
+  line-height: 1;
+  display: inline-block;
+  color: var(--white-color);
+  z-index: 2;
+  letter-spacing: 10px;
+  filter: drop-shadow(0 1px 3px);
 }
 
 /* Estilos para a classe .demo */
 .demo {
-    height: 100px;
-    background: var(--white-color);
+  height: 100px;
+  background: var(--white-color);
 }
 
 /* Estilos para a classe .layers */
 .layers {
-    position: relative;
+  position: relative;
 }
 
 /* Estilos para ::before e ::after da classe .layers */
 .layers::before,
 .layers::after {
-    content: attr(data-text);
-    position: absolute;
-    width: 110%;
-    z-index: -1;
+  content: attr(data-text);
+  position: absolute;
+  width: 110%;
+  z-index: -1;
 }
 
 .layers::before {
-    top: 10px;
-    left: 15px;
-    color: var(--pink-color);
+  top: 10px;
+  left: 15px;
+  color: var(--pink-color);
 }
 
 .layers::after {
-    top: 5px;
-    left: -10px;
-    color: var(--light-blue-color);
+  top: 5px;
+  left: -10px;
+  color: var(--light-blue-color);
 }
 
-/* Estilos para a classe .single-path */
 .single-path {
     clip-path: polygon(
       0% 12%,
@@ -483,6 +482,39 @@
 /* Estilos para a classe .hero-container */
 .hero-container {
   justify-content: center;
-    
+}
 
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .hero {
+      font-size: clamp(30px, 8vw, 50px);
+      letter-spacing: 5px;
+  }
+
+  .layers::before {
+      top: 5px;
+      left: 10px;
+  }
+
+  .layers::after {
+      top: 2px;
+      left: -5px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero {
+      font-size: clamp(20px, 10vw, 40px);
+      letter-spacing: 3px;
+  }
+
+  .layers::before {
+      top: 3px;
+      left: 7px;
+  }
+
+  .layers::after {
+      top: 1px;
+      left: -3px;
+  }
 }
